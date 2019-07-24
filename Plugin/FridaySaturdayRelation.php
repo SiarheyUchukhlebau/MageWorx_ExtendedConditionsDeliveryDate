@@ -40,20 +40,13 @@ class FridaySaturdayRelation
     {
         $today = $this->getCurrentDateTime();
         if ($futureDate->format('l') === 'Saturday' &&
+            $today->diff($futureDate)->days < 2 &&
             $today->format('l') === 'Friday' &&
             $today->format('G') >= 21
         ) {
             $result = true;
         }
-
-        if ($futureDate->format('l') === 'Thursday' &&
-            $today->format('l') === 'Wednesday' &&
-            $today->format('G') >= 12 &&
-            $today->diff($futureDate)->days < 2
-        ) {
-            $result = true;
-        }
-
+        
         return $result;
     }
 
