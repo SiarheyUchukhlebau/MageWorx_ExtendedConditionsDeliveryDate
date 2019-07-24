@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Plugins -->
+    <type name="MageWorx\DeliveryDate\Api\DeliveryOptionInterface">
+        <plugin name="disable_saturday_delivery_date_on_friday_rest"
+                type="MageWorx\ExtendedConditionsDeliveryDate\Plugin\FridaySaturdayRelation"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+</config>
